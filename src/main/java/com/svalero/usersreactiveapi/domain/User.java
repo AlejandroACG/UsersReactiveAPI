@@ -21,7 +21,4 @@ public class User {
 
     @Field
     private String password;
-
-    @Field
-    private LocalDate registrationDate;
 }

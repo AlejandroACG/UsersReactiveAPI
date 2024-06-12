@@ -29,21 +29,20 @@ public class UserController {
 
     @GetMapping(value = "/user/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Mono<User> getUser(@PathVariable String id) {
+    public Mono<User> getUser(@PathVariable("id") String id) {
         return userService.findById(id);
     }
 
     @PutMapping(value = "/user/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Mono<User> updateUser(@PathVariable String id, @Valid @RequestBody User user) {
+    public Mono<User> updateUser(@PathVariable("id") String id, @Valid @RequestBody User user) {
         return userService.updateUser(id, user);
     }
 
     @DeleteMapping(value = "/user/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public Mono<Void> deleteUser(@PathVariable String id) {
-        Mono<User> user = userService.findById(id);
-        user.switchIfEmpty(Mono.error(new EntityNotFoundException("User not found")));
-        return userService.deleteUser(id);
+    public Mono<Void> deleteUser(@PathVariable("id") String id) {
+        return userService.findById(id).switchIfEmpty(Mono.error(new EntityNotFoundException("User not found")))
+                .then(userService.deleteUser(id));
     }
 }
