@@ -4,7 +4,6 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
-import java.time.LocalDate;
 
 @Data
 @NoArgsConstructor
@@ -15,10 +14,4 @@ public class User {
 
     @Field
     private String username;
-
-    @Field
-    private String email;
-
-    @Field
-    private String password;
 }

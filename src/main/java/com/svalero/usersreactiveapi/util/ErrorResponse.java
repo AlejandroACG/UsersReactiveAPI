@@ -1,4 +1,4 @@
-package com.svalero.usersreactiveapi.domain;
+package com.svalero.usersreactiveapi.util;
 import lombok.Data;
 import java.util.HashMap;
 import java.util.Map;

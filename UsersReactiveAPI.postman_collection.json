@@ -32,7 +32,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"Enrique\",\r\n    \"email\": \"micorreo@hotmail.com\",\r\n    \"password\": \"123\"\r\n}",
+					"raw": "{\r\n    \"username\": \"Enrique\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -72,7 +72,7 @@
 					"variable": [
 						{
 							"key": "id",
-							"value": "6669773f268972026bc26ad0"
+							"value": "6669a40333555e754188ce45"
 						}
 					]
 				}
@@ -86,7 +86,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"otrocorreo@gmail.com\"\r\n}",
+					"raw": "{\r\n    \"username\": \"Marisol\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -107,7 +107,7 @@
 					"variable": [
 						{
 							"key": "id",
-							"value": "66697b9f6e72323b79be3537"
+							"value": "6669a44333555e754188ce46"
 						}
 					]
 				}
@@ -115,7 +115,7 @@
 			"response": []
 		},
 		{
-			"name": "deleteUSer",
+			"name": "deleteUser",
 			"request": {
 				"method": "DELETE",
 				"header": [],
@@ -133,7 +133,7 @@
 					"variable": [
 						{
 							"key": "id",
-							"value": "6669773f268972026bc26ad0"
+							"value": "6669a68e07b6d34442b320eb"
 						}
 					]
 				}
