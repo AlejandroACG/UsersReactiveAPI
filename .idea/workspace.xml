@@ -5,21 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="425c3c42-7fb0-488b-8513-2de669ba2658" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/svalero/usersreactiveapi/handler/UserHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/svalero/usersreactiveapi/router/UserRouter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/svalero/usersreactiveapi/validator/UserValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svalero/usersreactiveapi/controller/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svalero/usersreactiveapi/domain/ErrorResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/svalero/usersreactiveapi/util/ErrorResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svalero/usersreactiveapi/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/svalero/usersreactiveapi/domain/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svalero/usersreactiveapi/exception/CustomIllegalArgumentException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svalero/usersreactiveapi/exception/EntityNotFoundException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svalero/usersreactiveapi/exception/GlobalExceptionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svalero/usersreactiveapi/exception/UnauthorizedException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svalero/usersreactiveapi/exception/UniqueConstraintViolationException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/svalero/usersreactiveapi/handler/UserHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/svalero/usersreactiveapi/handler/UserHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/svalero/usersreactiveapi/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/svalero/usersreactiveapi/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/svalero/usersreactiveapi/service/UserServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/svalero/usersreactiveapi/util/ErrorResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/svalero/usersreactiveapi/util/ErrorResponse.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -1,6 +1,7 @@
 package com.svalero.usersreactiveapi.handler;
 import com.svalero.usersreactiveapi.domain.User;
 import com.svalero.usersreactiveapi.service.UserService;
+import com.svalero.usersreactiveapi.util.ErrorResponse;
 import com.svalero.usersreactiveapi.validator.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -9,7 +10,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.validation.BeanPropertyBindingResult;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
-import org.springframework.web.ErrorResponse;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import org.springframework.web.server.ResponseStatusException;
@@ -48,7 +48,7 @@ public class UserHandler {
                         .body(Mono.just(u), User.class))
                 .switchIfEmpty(ServerResponse.status(HttpStatus.NOT_FOUND)
                         .contentType(MediaType.APPLICATION_JSON)
-                        .body(Mono.just(com.svalero.usersreactiveapi.util.ErrorResponse.generalError(404, "User not found")), ErrorResponse.class));
+                        .body(Mono.just(new ErrorResponse(404, "User not found")), ErrorResponse.class));
     }
 
     public Mono<ServerResponse> updateUser(ServerRequest serverRequest) {
@@ -70,7 +70,15 @@ public class UserHandler {
     public Mono<ServerResponse> deleteUser(ServerRequest serverRequest) {
         String id = serverRequest.pathVariable("id");
         return userService.deleteUser(id)
-                .flatMap(user -> ServerResponse.noContent().build());
+                .flatMap(deleted -> {
+                    if (deleted) {
+                        return ServerResponse.noContent().build();
+                    } else {
+                        return ServerResponse.status(HttpStatus.NOT_FOUND)
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .body(Mono.just(new ErrorResponse(404, "User not found")), ErrorResponse.class);
+                    }
+                });
     }
 
     private void validate(User user) {

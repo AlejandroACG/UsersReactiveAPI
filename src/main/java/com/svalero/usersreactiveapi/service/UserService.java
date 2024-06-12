@@ -26,7 +26,14 @@ public class UserService {
                         }));
     }
 
-    public Mono<Void> deleteUser(String id) {
-        return userRepository.deleteById(id);
+    public Mono<Boolean> deleteUser(String id) {
+        return userRepository.existsById(id)
+                .flatMap(exists -> {
+                    if (exists) {
+                        return userRepository.deleteById(id).thenReturn(true);
+                    } else {
+                        return Mono.just(false);
+                    }
+                });
     }
 }
