@@ -1,8 +1,7 @@
 package com.svalero.usersreactiveapi.exception;
-
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.exc.InvalidFormatException;
-import com.svalero.ComicBookStoreAPI.domain.ErrorResponse;
+import com.svalero.usersreactiveapi.domain.ErrorResponse;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.ConstraintViolationException;
 import org.slf4j.Logger;
@@ -16,7 +15,6 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -24,7 +22,6 @@ import java.util.stream.Collectors;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
-    // TODO los nombres de las entidades para el EntityNotFoundException mejor declararlos como variable al inicio de cada service.
     private final Logger logger = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
@@ -113,13 +110,6 @@ public class GlobalExceptionHandler {
         ErrorResponse errorResponse = ErrorResponse.generalError(409, "Data integrity violation. A unique constraint may have been violated or other integrity constraint failed");
         logger.error(dive.getMessage(), dive);
         return new ResponseEntity<>(errorResponse, HttpStatus.CONFLICT);
-    }
-
-    @ExceptionHandler(StorageException.class)
-    public ResponseEntity<ErrorResponse> handleStorageException(StorageException se) {
-        ErrorResponse errorResponse = ErrorResponse.generalError(500, se.getMessage());
-        logger.error(se.getMessage(), se);
-        return new ResponseEntity<>(errorResponse, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     @ExceptionHandler(Exception.class)
